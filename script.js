@@ -69,7 +69,7 @@ const addBook = () => {
     id,
     bookTitle.value,
     bookAuthor.value,
-    bookYear.value,
+    parseInt(bookYear.value),
     bookIsComplete.checked ?? false
   );
   
@@ -196,7 +196,7 @@ const fillEditForm = (bookId) => {
   bookTitle.value = title;
   bookAuthor.value = author;
   bookYear.value = year;
-  bookIsComplete.value = isComplete ?? false;
+  bookIsComplete.checked = isComplete ?? false;
 
   bookSubmit.textContent = "Edit Buku";
   bookSubmit.setAttribute("class", "btn btn-warning w-full");
