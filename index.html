@@ -1,16 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bookshelf Apps</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
 
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  
-  <h1>Hello World!</h1>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 class="shadow text-big">Bookshelf Apps</h1>
+    </header>
 
-  <script src="./script.js"></script>
-</body>
+    <main>
+      <section class="inputSection shadow">
+        <h3 class="text-large">Masukkan Buku Baru</h3>
+        <form action="#" id="inputBookForm">
+          <div class="input">
+            <label for="bookTitle">Judul</label>
+            <input type="text" id="bookTitle" class="myInput w-full" required />
+          </div>
+          <div class="input">
+            <label for="bookAuthor">Penulis</label>
+            <input type="text" id="bookAuthor" class="myInput w-full" required />
+          </div>
+          <div class="input">
+            <label for="bookYear">Tahun</label>
+            <input type="number" id="bookYear" class="myInput w-full" required />
+          </div>
+          <div class="input">
+            <label for="bookIsComplete">Selesai Dibaca</label>
+            <input type="checkbox" id="bookIsComplete" />
+          </div>
+
+          <button type="submit" id="bookSubmit" class="btn btn-purple w-full">
+            Tambah buku ke rak belum selesai dibaca
+          </button>
+        </form>
+      </section>
+
+      <section class="searchSection shadow">
+        <h3 class="text-large">Cari Buku</h3>
+
+        <div class="searchBookForm">
+          <select id="selectFilterSearch">
+            <option value="title">Judul</option>
+            <option value="author">Penulis</option>
+            <option value="year">Tahun</option>
+          </select>
+
+          <input
+            type="text"
+            id="inputSearchBook"
+            class="myInput w-full"
+            placeholder="Masukkan kata..."
+          />
+
+          <button type="button" id="searchSubmit" class="btn btn-purple">Cari</button>
+        </div>
+      </section>
+
+      <section class="bookshelf shadow">
+        <h3 class="text-large">Belum Selesai Dibaca</h3>
+
+        <div id="incompleteBookshelfList" class="bookList">
+          <!-- <article class="bookItem">
+            <h4 class="text-normal">Book Title</h4>
+            <p class="text-small fw-semibold">Penulis John Doe</p>
+            <p class="text-small">Tahun: 2002</p>
+
+            <div class="buttons">
+              <button type="button" class="btn btn-sm btn-success">Selesai dibaca</button>
+              <button type="button" class="btn btn-sm btn-warning">Edit</button>
+              <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+            </div>
+          </article> -->
+        </div>
+      </section>
+
+      <section class="bookshelf shadow">
+        <h3 class="text-large">Selesai Dibaca</h3>
+
+        <div id="completeBookshelfList" class="bookList">
+          <!-- <article class="bookItem">
+            <h4 class="text-normal">Book Title</h4>
+            <p class="text-small fw-semibold">Penulis John Doe</p>
+            <p class="text-small">Tahun: 2002</p>
+
+            <div class="buttons">
+              <button type="button" class="btn btn-sm btn-success">Selesai dibaca</button>
+              <button type="button" class="btn btn-sm btn-warning">Edit</button>
+              <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+            </div>
+          </article> -->
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="closeButton" class="close">&times;</span>
+          <h2 class="text-large">Konfirmasi</h2>
+        </div>
+        <div class="modal-body">
+          <p>Apakah anda yakin ingin menghapus data ini?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-purple " id="confirmButton">Hapus</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
